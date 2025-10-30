@@ -1,0 +1,18 @@
+{
+  "name": "medspa-ai-support-bot",
+  "version": "1.0.0",
+  "description": "AI FAQ + Booking widget for Med-Spas (website embed)",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "openai": "^4.55.3",
+    "string-similarity": "^4.0.4"
+  }
+}
