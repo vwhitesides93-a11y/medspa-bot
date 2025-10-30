@@ -1,0 +1,11 @@
+1. App URL:
+   - If you set ingress.hosts to your domain, access it at:
+     https://{{ (index .Values.ingress.hosts 0).host }}
+
+2. Health check:
+   - https://<your-domain>/api/health
+
+3. Env:
+   - BOOKING_URL: {{ .Values.env.bookingUrl }}
+   - CORS_ORIGINS: {{ .Values.env.corsOrigins }}
+   - OPENAI_API_KEY: {{ ternary "(set via Secret)" "(disabled)" (ne .Values.env.openaiApiKey "") }}

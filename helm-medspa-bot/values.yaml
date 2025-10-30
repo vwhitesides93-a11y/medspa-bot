@@ -1,0 +1,60 @@
+# Default values for medspa-bot
+replicaCount: 2
+
+image:
+  repository: ghcr.io/YOUR_ORG_OR_USER/medspa-bot
+  tag: latest
+  pullPolicy: Always
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: false
+  name: ""
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3000
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/proxy-body-size: "2m"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  hosts:
+    - host: bot.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: medspa-bot-tls
+      hosts:
+        - bot.example.com
+
+env:
+  bookingUrl: "https://www.vagaro.com/your-spa/book-now"
+  corsOrigins: ""
+  openaiApiKey: ""  # leave empty to disable enrichment
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 70
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

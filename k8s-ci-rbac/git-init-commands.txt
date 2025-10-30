@@ -1,0 +1,12 @@
+# Git init & first push (example)
+REPO=git@github.com:YOUR_ORG/medspa-bot-infra.git
+
+unzip medspa-bot-infra-with-chart.zip
+cd medspa-bot-infra-with-chart
+
+git init
+git branch -m main
+git add .
+git commit -m "Initial commit: infra + helm chart + CI"
+git remote add origin "$REPO"
+git push -u origin main

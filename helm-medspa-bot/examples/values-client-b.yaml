@@ -1,0 +1,20 @@
+# values-client-b.yaml
+image:
+  repository: ghcr.io/YOUR_ORG_OR_USER/medspa-bot
+  tag: latest
+
+ingress:
+  hosts:
+    - host: bot.client-b.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: medspa-bot-client-b-tls
+      hosts:
+        - bot.client-b.example.com
+
+env:
+  bookingUrl: "https://www.vagaro.com/client-b/book"
+  corsOrigins: "https://client-b.example.com"
+  openaiApiKey: ""  # provide if you want enrichment

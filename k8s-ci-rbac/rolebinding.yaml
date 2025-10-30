@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: medspa-ci-deployer
+  namespace: medspa-ci
+subjects:
+  - kind: ServiceAccount
+    name: medspa-ci
+    namespace: medspa-ci
+roleRef:
+  kind: Role
+  name: medspa-ci-deployer
+  apiGroup: rbac.authorization.k8s.io

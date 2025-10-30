@@ -1,0 +1,11 @@
+# values-starter.yaml
+replicaCount: 1
+resources:
+  requests: { cpu: 50m, memory: 64Mi }
+  limits:   { cpu: 200m, memory: 256Mi }
+autoscaling:
+  enabled: false
+env:
+  bookingUrl: "https://www.vagaro.com/CLIENT/book"
+  corsOrigins: "https://client.example.com"
+# openaiApiKey: ""   # uncomment to enable enrichment

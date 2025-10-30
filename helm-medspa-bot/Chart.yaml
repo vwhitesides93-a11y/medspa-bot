@@ -1,0 +1,6 @@
+apiVersion: v2
+name: medspa-bot
+description: AI FAQ + Booking bot for Med-Spas (Deployment, Service, Ingress, HPA, ConfigMap, Secret)
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

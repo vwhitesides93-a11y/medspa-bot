@@ -1,0 +1,14 @@
+# values-enterprise.yaml
+replicaCount: 3
+resources:
+  requests: { cpu: 200m, memory: 256Mi }
+  limits:   { cpu: 1000m, memory: 1024Mi }
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 60
+env:
+  bookingUrl: "https://www.vagaro.com/CLIENT/book"
+  corsOrigins: "https://client.example.com"
+# openaiApiKey: ""
