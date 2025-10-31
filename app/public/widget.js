@@ -3,14 +3,16 @@
   const BRAND    = document.currentScript.getAttribute('data-brand') || 'Med-Spa Concierge';
   const BOOK_URL = document.currentScript.getAttribute('data-book')  || '';
 
-  // Bubble button
-  const bubble = document.createElement('div');
-  bubble.id = 'ms-bot-bubble';
-  bubble.innerHTML = '💬';
+// Bubble button
+const bubble = document.createElement('div');
+bubble.id = 'ms-bot-bubble';
+bubble.className = 'ms-bot-bubble'; 
+bubble.innerHTML = '💬';
 
-  // Window
-  const win = document.createElement('div');
-  win.id = 'ms-bot-window';
+// Window
+const win = document.createElement('div');
+win.id = 'ms-bot-window';
+win.className = 'ms-bot-window';     
   win.innerHTML = `
     <div id="ms-header">${BRAND}<span id="ms-close" style="cursor:pointer">✕</span></div>
     <div id="ms-lead">
