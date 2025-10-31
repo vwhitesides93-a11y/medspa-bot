@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Med-Spa AI Support Bot — Demo</title>
-  <link rel="stylesheet" href="https://medspa-bot-1.onrender.com/public/widget.css" />
+  <link rel="stylesheet" href="/public/widget.css?v=8" />
   <style>
-    body { font-family: system-ui, apple-system, Segoe UI, Roboto, sans-serif; padding: 40px; }
-    .card { max-width: 760px; margin: 0 auto; padding: 24px; border: 1px solid #eee; border-radius: 16px; background: #f4f4f6; }
-    code { background: #f4f4f6; padding: 2px 6px; border-radius: 6px; }
+    body{font-family:system-ui,Segoe UI,Roboto,sans-serif;padding:40px;}
+    .card{max-width:760px;margin:0 auto;padding:24px;border:1px solid #eee;border-radius:16px;background:#f4f4f6;}
+    code{background:#f4f4f6;padding:2px 6px;border-radius:6px;}
   </style>
 </head>
 <body>
@@ -16,18 +16,20 @@
     <h1>Med-Spa AI Support Bot — Demo</h1>
     <p>Click the chat bubble in the bottom-right to try it.</p>
     <p>To embed on any site, add this tag (change domain & booking link):</p>
-    <pre><code>&lt;script src="https://YOUR-DOMAIN/public/widget.js"
-data-api="https://YOUR-DOMAIN/api/chat"
-data-brand="Your Med-Spa Concierge"
-data-book="https://calendly.com/yourname/medspa-appointment"
-data-css="https://YOUR-DOMAIN/public/widget.css"&gt;&lt;/script&gt;</code></pre>
+<pre><code>&lt;script src="https://YOUR-DOMAIN/public/widget.js"&gt;
+  data-api="https://YOUR-DOMAIN/api/chat"
+  data-brand="Your Med-Spa Concierge"
+  data-book="https://calendly.com/yourname/medspa-appointment"
+  data-css="https://YOUR-DOMAIN/public/widget.css"&gt;&lt;/script&gt;</code></pre>
   </div>
 
-  <!-- Local demo -->
-<script src="https://medspa-bot-1.onrender.com/public/widget.js?v=6"
-  data-api="https://medspa-bot-1.onrender.com/api/chat"
-  data-brand="Ally – MedSpa Concierge"
-  data-book="https://calendly.com/whitesides93/30min/medspa-appointment"
-  data-css="https://medspa-bot-1.onrender.com/public/widget.css?v=6"></script>
+  <!-- LIVE DEMO (this actually mounts the bubble) -->
+  <script
+    src="/public/widget.js?v=8"
+    data-api="/api/chat"
+    data-brand="Ally — MedSpa Concierge"
+    data-book="https://calendly.com/whitesides93/30min/medspa-appointment"
+    data-css="/public/widget.css?v=8">
+  </script>
 </body>
 </html>
