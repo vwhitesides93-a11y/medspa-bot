@@ -97,6 +97,17 @@ win.className = 'ms-bot-window';
     send.onclick   = ask;
     input.addEventListener('keydown', (e) => { if (e.key === 'Enter') ask(); });
   }
+// Make a tiny public API so demo pages (or client sites) can open the bot prefilled
+window.MedSpaBot = {
+  open(prefill) {
+    win.style.display = 'flex';
+    if (prefill) {
+      input.value = prefill;
+      // trigger the same action as clicking Send
+      send.click();
+    }
+  }
+};
 
   // Run whether DOM is ready or not
   if (document.readyState === 'loading') {
