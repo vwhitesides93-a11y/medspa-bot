@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Med-Spa Concierge — Demo</title>
+  <link rel="stylesheet" href="/public/widget.css" />
+
+  <style>
+    :root {
+      /* change these 3 to match any client’s brand */
+      --brand:#144E8C;          /* primary */
+      --brand-ink:#ffffff;      /* on-primary */
+      --brand-ink-dark:#0b2a4a; /* darker accent if needed */
+    }
+    body{font-family:system-ui,Segoe UI,Roboto,sans-serif;margin:0;background:#f7f8fa}
+    .hero{
+      max-width:1000px;margin:40px auto;padding:32px;background:#fff;border-radius:16px;
+      box-shadow:0 8px 24px rgba(0,0,0,.06);display:grid;gap:24px;grid-template-columns:1fr 380px;
+    }
+    .hero h1{margin:0 0 8px}
+    .hero p{margin:0 0 16px;color:#555}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+    .btn{
+      border:0;border-radius:999px;padding:12px 18px;font-weight:600;cursor:pointer;
+      background:var(--brand);color:var(--brand-ink);
+    }
+    .btn.outline{
+      background:#fff;color:var(--brand);border:2px solid var(--brand);
+    }
+    .card{
+      background:#f0f4fb;border-radius:16px;padding:16px
+    }
+    /* quick widget theming overrides (optional) */
+    #ms-bot-window .ms-header{ background:var(--brand); color:var(--brand-ink); }
+    #ms-send{ background:var(--brand); color:var(--brand-ink); }
+    .ms-bot-bubble{ background:var(--brand); color:var(--brand-ink); }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div>
+      <img src="/public/logo.png" alt="Med-Spa Logo" style="height:44px;margin-bottom:12px" />
+      <h1>Med-Spa AI Concierge (Live Demo)</h1>
+      <p>Ask questions, capture lead info, and book instantly via Calendly. Try a one-click scenario:</p>
+      <div class="cta-row">
+        <button class="btn" onclick="MedSpaBot.open('I want Botox this week')">Book Botox</button>
+        <button class="btn" onclick="MedSpaBot.open('Do you have openings for laser hair removal?')">Laser Hair Removal</button>
+        <button class="btn outline" onclick="MedSpaBot.open('How much is a facial and what’s the prep?')">Pricing & Prep</button>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <strong>Embed on any site:</strong>
+        <pre style="overflow:auto;font-size:.9rem"><code>&lt;script src="https://YOUR-DOMAIN/public/widget.js"
+  data-api="https://YOUR-DOMAIN/api/chat"
+  data-brand="Your Med-Spa Concierge"
+  data-book="https://calendly.com/whitesides93/30min/medspa-appointment"
+  data-css="https://YOUR-DOMAIN/public/widget.css"&gt;&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+
+    <div>
+      <!-- The live widget on this page -->
+      <script
+        src="/public/widget.js?v=demo"
+        data-api="/api/chat"
+        data-brand="Ally — MedSpa Concierge"
+        data-book="https://calendly.com/whitesides93/30min/medspa-appointment"
+        data-css="/public/widget.css?v=demo">
+      </script>
+    </div>
+  </div>
+
+</body>
+</html>
